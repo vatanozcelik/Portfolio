@@ -151,3 +151,16 @@ function initMap() {
       ]
     });
 }
+function sendEmail(){
+    Email.send({
+        Host : "smtp.gmail.com",
+        Username : "vatanozcelik91@gmail.com",
+        Password : "Vatan.123",
+        To : "bahtim59@gmail.com",
+        From : document.getElementById("email").value,
+        Subject : "New Contact from Enquiry",
+        Body : "And this is the body"
+    }).then(
+    message => alert("Message is sent successfully!")
+    );
+}

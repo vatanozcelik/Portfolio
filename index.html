@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with Vatan Ozcelik landing page.">
+    <meta name="description" content="Start your development with JohnDoe landing page.">
     <meta name="author" content="Devcrud">
     <title>Vatan Ozcelik</title>
     <!-- font icons -->
-    <!-- <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css"> -->
-    <!-- Bootstrap + vatan main styles -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + JohnDoe main styles -->
 	<link rel="stylesheet" href="./style.css">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -54,6 +54,9 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a href="#resume" class="nav-link">Resume</a>
+                    </li>
+                    <li class="nav-item last-item">
+                        <a href="#contact" class="nav-link">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -224,7 +227,7 @@
                             </div>
                             <h6>English</h6>
                             <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 88%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 8%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <h6>German</h6>
                             <div class="progress mb-3">
@@ -237,6 +240,69 @@
         </div>
     </section>
 
+    <div class="section contact" id="contact">
+        <div id="map" class="map"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="contact-form-card"> 
+                        <h4 class="contact-title">Send a message</h4>
+                        <form onsubmit="sendEmail(); reset(); return false;">
+                            <div class="form-group">
+                                <input  class="form-control" type="text" placeholder="Name *" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="email" placeholder="Email *" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" id="" placeholder="Message *" rows="7" required></textarea>
+                            </div>
+                            <div class="form-group ">
+                                <button type="submit" class="form-control btn btn-primary" >Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info-card">
+                        <h4 class="contact-title">Get in touch</h4>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-1 mr-1">
+                                <i class="ti-mobile icon-md"></i>
+                            </div>
+                            <div class="col-10 ">
+                                <h6 class="d-inline">Phone : <br> <span class="text-muted">+ (90) 531-321-3889</span></h6>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-1 mr-1">
+                                <i class="ti-map-alt icon-md"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="d-inline">Address :<br> <span class="text-muted">Samandag tekebasi mahallesi, Hatay/Turkey</span></h6>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-1 mr-1">
+                                <i class="ti-envelope icon-md"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="d-inline">Email :<br> <span class="text-muted">vatanozcelik91@gmail.com</span></h6>
+                            </div>
+                        </div>
+                        <ul class="social-icons pt-4">
+                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-facebook" aria-hidden="true"></i></a></li>
+                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-twitter" aria-hidden="true"></i></a></li>
+                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-google" aria-hidden="true"></i></a></li>
+                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-instagram" aria-hidden="true"></i></a></li>
+                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-github" aria-hidden="true"></i></a></li>
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <footer class="footer py-3">
         <div class="container">
             <p class="small mb-0 text-light">
@@ -249,7 +315,25 @@
     <!-- Google mpas -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
 
-    <!-- JohnDoe js -->
+    <!-- vatanozcelik js -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        
+        function sendEmail(){
+            Email.send({
+                Host : "smtp.gmail.com",
+                Username : "vatanozcelik91@gmail.com",
+                Password : "Vatan.123",
+                To : "bahtim59@gmail.com",
+                From : document.getElementById("email").value,
+                Subject : "New Contact from Enquiry",
+                Body : "And this is the body"
+            }).then(
+            message => alert(message)
+            );
+        }
+
+    </script>
     <script src="JavaScript.js"></script>
 
 </body>
